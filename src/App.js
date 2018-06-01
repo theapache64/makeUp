@@ -7,7 +7,12 @@ import CodeMirror from 'react-codemirror';
 
 require('codemirror/mode/javascript/javascript');
 
-
+const SAMPLE_JSX = "// Only string props\n" +
+    "<TextInput\n" +
+    "\tref=\"inputRef\"\n" +
+    "\totherTags=\"Some string\"\n" +
+    "\tplaceholder=\"Enter your name here\"\n" +
+    "    />";
 
 class App extends Component {
 
@@ -40,13 +45,23 @@ class App extends Component {
     render() {
         return (
             <Grid fluid>
+
+                {/*Heading*/}
+                <Row>
+                    <Col md={12} className="text-center">
+                        <h1>makeUp!</h1>
+                        <p>string androidized!</p>
+                    </Col>
+                </Row>
+
                 <Row>
                     <Col md={12}>
-                        <h4>Original Code</h4>
+                        <h4>JSX Code</h4>
 
                         <CodeMirror
                             ref="originalCodeEditor"
                             onChange={(code) => this.onOriginalCodeChanged(code)}
+                            value={SAMPLE_JSX}
                             options={{
                                 mode: 'javascript',
                                 lineNumbers: true,
