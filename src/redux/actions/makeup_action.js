@@ -5,8 +5,8 @@ const makeUp = (originalCode) => dispatch => {
     dispatch({
         type: MAKEUP_FINISHED,
         payload: {
-            convertedCode: 'this is converted code',
-            resourceCode: 'this  is resource code'
+            convertedCode: originalCode,
+            resourceCode: originalCode
         }
     })
 };

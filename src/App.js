@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import './App.css';
 import makeUp from './redux/actions/makeup_action'
 import {connect} from 'react-redux';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Col, Grid, Row} from 'react-bootstrap';
 import CodeMirror from 'react-codemirror';
+
 require('codemirror/mode/javascript/javascript');
-require('codemirror/mode/xml/xml');
-require('codemirror/mode/markdown/markdown');
 
 
 const defaults = {
@@ -16,10 +15,31 @@ const defaults = {
 
 class App extends Component {
 
+    constructor(props){
+        super(props);
+
+        this.state = {
+            convertedCode : '',
+            resourceCode : ''
+        }
+    }
 
     componentDidMount() {
-        this.props.makeUp('Hello');
+        console.log(this.refs.originalCodeEditor);
+       // this.refs.originalCodeEditor.codeMirror.setSize("100%", "800px");
+
+        this.props.makeUp(this.refs.originalCodeEditor.codeMirror.doc.getValue());
     }
+
+
+    componentWillReceiveProps(nextProps) {
+        this.refs.convertedCodeEditor.codeMirror.doc.setValue(nextProps.convertedCode);
+        this.refs.resourceCodeEditor.codeMirror.doc.setValue(nextProps.resourceCode);
+    }
+
+    onOriginalCodeChanged = (code) => {
+        this.props.makeUp(code);
+    };
 
     render() {
         return (
@@ -27,20 +47,45 @@ class App extends Component {
                 <Row>
 
                     <Col md={4}>
+
+                        <h4>Original Code</h4>
+
                         <CodeMirror
+                            ref="originalCodeEditor"
+                            onChange={(code) => this.onOriginalCodeChanged(code)}
                             options={{
                                 mode: 'javascript',
-                                lineNumbers : true,
-                                isReadOnly : false
+                                lineNumbers: true,
+                                isReadOnly: false
                             }} value={defaults.javascript}/>
+
                     </Col>
 
                     <Col md={4}>
-                        <p>{this.props.convertedCode}</p>
+
+                        <h4>Converted Code</h4>
+
+                        <CodeMirror
+                            ref="convertedCodeEditor"
+                            options={{
+                                mode: 'javascript',
+                                lineNumbers: true,
+                                readOnly: true
+                            }}/>
+
                     </Col>
 
-                    <Col md={4} >
-                        <p>{this.props.resourceCode}</p>
+                    <Col md={4}>
+
+                        <h4>Resource Code</h4>
+
+                        <CodeMirror
+                            ref="resourceCodeEditor"
+                            options={{
+                                mode: 'javascript',
+                                lineNumbers: true,
+                                readOnly: true
+                            }}/>
                     </Col>
 
                 </Row>
