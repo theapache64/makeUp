@@ -49,7 +49,7 @@ class App extends Component {
                 {/*Heading*/}
                 <Row>
                     <Col md={12} className="text-center">
-                        <h1>makeUp!</h1>
+                        <h1>makeUp!!</h1>
                         <p>string androidized!</p>
                     </Col>
                 </Row>
