@@ -2,7 +2,6 @@
 import {MAKEUP_FINISHED} from '../actions/makeup_action';
 
 const initialState = {
-    originalCode: '',
     convertedCode: '',
     resourceCode: ''
 };

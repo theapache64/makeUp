@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "codemirror": "^5.38.0",
     "react": "^16.4.0",
+    "react-bootstrap": "^0.32.1",
+    "react-codemirror": "^1.0.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",

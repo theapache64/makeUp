@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import makeUp from './redux/actions/makeup_action'
 import {connect} from 'react-redux';
+import {Grid, Row, Col} from 'react-bootstrap';
+import CodeMirror from 'react-codemirror';
+require('codemirror/mode/javascript/javascript');
+require('codemirror/mode/xml/xml');
+require('codemirror/mode/markdown/markdown');
+
+
+const defaults = {
+    markdown: '# Heading\n\nSome **bold** and _italic_ text\nBy [Jed Watson](https://github.com/JedWatson)',
+    javascript: 'var component = {\n\tname: "react-codemirror",\n\tauthor: "Jed Watson",\n\trepo: "https://github.com/JedWatson/react-codemirror"\n};'
+};
 
 class App extends Component {
 
@@ -11,18 +21,30 @@ class App extends Component {
         this.props.makeUp('Hello');
     }
 
-
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                    {this.props.convertedCode}
-                </p>
-            </div>
+            <Grid fluid>
+                <Row>
+
+                    <Col md={4}>
+                        <CodeMirror
+                            options={{
+                                mode: 'javascript',
+                                lineNumbers : true,
+                                isReadOnly : false
+                            }} value={defaults.javascript}/>
+                    </Col>
+
+                    <Col md={4}>
+                        <p>{this.props.convertedCode}</p>
+                    </Col>
+
+                    <Col md={4} >
+                        <p>{this.props.resourceCode}</p>
+                    </Col>
+
+                </Row>
+            </Grid>
         );
     }
 }
