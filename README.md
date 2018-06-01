@@ -1,2 +1,2 @@
 # makeUp
-Filters strings from JSX Codegit
+Filters strings from JSX Code
