@@ -8,46 +8,40 @@ import CodeMirror from 'react-codemirror';
 require('codemirror/mode/javascript/javascript');
 
 
-const defaults = {
-    markdown: '# Heading\n\nSome **bold** and _italic_ text\nBy [Jed Watson](https://github.com/JedWatson)',
-    javascript: 'var component = {\n\tname: "react-codemirror",\n\tauthor: "Jed Watson",\n\trepo: "https://github.com/JedWatson/react-codemirror"\n};'
-};
 
 class App extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
-            convertedCode : '',
-            resourceCode : ''
+            convertedCode: '',
+            resourceCode: ''
         }
-    }
-
-    componentDidMount() {
-        console.log(this.refs.originalCodeEditor);
-       // this.refs.originalCodeEditor.codeMirror.setSize("100%", "800px");
-
-        this.props.makeUp(this.refs.originalCodeEditor.codeMirror.doc.getValue());
-    }
-
-
-    componentWillReceiveProps(nextProps) {
-        this.refs.convertedCodeEditor.codeMirror.doc.setValue(nextProps.convertedCode);
-        this.refs.resourceCodeEditor.codeMirror.doc.setValue(nextProps.resourceCode);
     }
 
     onOriginalCodeChanged = (code) => {
         this.props.makeUp(code);
     };
 
+    componentDidMount() {
+        console.log(this.refs.originalCodeEditor);
+        // this.refs.originalCodeEditor.codeMirror.setSize("100%", "800px");
+
+        this.props.makeUp(this.refs.originalCodeEditor.codeMirror.doc.getValue());
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        this.refs.convertedCodeEditor.codeMirror.doc.setValue(nextProps.convertedCode);
+        this.refs.resourceCodeEditor.codeMirror.doc.setValue(nextProps.resourceCode);
+    }
+
     render() {
         return (
             <Grid fluid>
                 <Row>
-
-                    <Col md={4}>
-
+                    <Col md={12}>
                         <h4>Original Code</h4>
 
                         <CodeMirror
@@ -57,11 +51,14 @@ class App extends Component {
                                 mode: 'javascript',
                                 lineNumbers: true,
                                 isReadOnly: false
-                            }} value={defaults.javascript}/>
-
+                            }}/>
                     </Col>
+                </Row>
+                <Row>
 
-                    <Col md={4}>
+
+
+                    <Col md={6}>
 
                         <h4>Converted Code</h4>
 
@@ -75,7 +72,7 @@ class App extends Component {
 
                     </Col>
 
-                    <Col md={4}>
+                    <Col md={6}>
 
                         <h4>Resource Code</h4>
 
