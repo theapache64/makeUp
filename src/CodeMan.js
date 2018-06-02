@@ -6,7 +6,7 @@ export default class CodeMan {
         "ref"
     ];
 
-    static regEx = /(?:(\w+)="([\w\s]+)")/gm;
+    static regEx = /(?:(\w+)="([^"]+)")/gm;
 
     static analyze(originalCode: string) {
 
