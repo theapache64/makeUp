@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75e1ead6-bbf3-405b-b7dd-7cc71d769b7f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CodeMan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CodeMan.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +20,8 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="9" selection-start-column="19" selection-end-line="15" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -103,8 +103,8 @@
       <file leaf-file-name="CodeMan.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CodeMan.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+            <state relative-caret-position="351">
+              <caret line="38" column="52" lean-forward="true" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -206,7 +206,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="CodeMa&#9;FILE&#9;file:///home/theapache64/Documents/projects/makeup/src/CodeMan.js" />
+    <property name="SearchEverywhereHistoryKey" value="App&#9;FILE&#9;file:///home/theapache64/Documents/projects/makeup/src/App.js&#10;CodeMa&#9;FILE&#9;file:///home/theapache64/Documents/projects/makeup/src/CodeMan.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -231,7 +231,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.Run">
     <configuration name="Run" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -272,12 +272,12 @@
       <updated>1527840684754</updated>
       <workItem from="1527840689863" duration="2086000" />
       <workItem from="1527847175270" duration="15793000" />
-      <workItem from="1527914048687" duration="178000" />
+      <workItem from="1527914048687" duration="992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21035000" />
+    <option name="totallyTimeSpent" value="21849000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="917" height="1053" extended-state="4" />
@@ -291,7 +291,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32968238" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32968238" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32968238" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24971624" />
@@ -632,8 +632,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="9" selection-start-column="19" selection-end-line="15" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -642,8 +642,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CodeMan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        <state relative-caret-position="351">
+          <caret line="38" column="52" lean-forward="true" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
         </state>
       </provider>
     </entry>

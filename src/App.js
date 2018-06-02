@@ -10,7 +10,7 @@ require('codemirror/mode/javascript/javascript');
 const SAMPLE_JSX = "// Only string props\n" +
     "<TextInput\n" +
     "\tref=\"inputRef\"\n" +
-    "\totherTags=\"Some string\"\n" +
+    "\totherTags=\"Jon's car\"\n" +
     "\tplaceholder=\"Enter your name here\"\n" +
     "    />";
 

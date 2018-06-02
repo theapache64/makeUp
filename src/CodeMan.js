@@ -6,6 +6,11 @@ export default class CodeMan {
         "ref"
     ];
 
+    static test = {
+        Jon_s_car : 'Jon\'s car',
+        Enter_your_name_here : 'Enter your name here',
+    };
+
     static regEx = /(?:(\w+)="([^"]+)")/gm;
 
     static analyze(originalCode: string) {
@@ -23,12 +28,16 @@ export default class CodeMan {
 
             //ADDRESS_DETAILS: 'ADDRESS DETAILS',
             if(this.skipAttrs.indexOf(attrName)===-1){
-                console.log(attrValue);
 
-                const name = attrValue.replace(/\s+/g,'_');
+
+                const name = attrValue.replace(/\W+/g,'_');
+                const value = attrValue.replace(/'/g,"\\'");
 
                 //building resource code
-                resourceCode.push(`${name} : '${attrValue}',`)
+                const stringObject = `${name} : '${value}'`;
+                if(resourceCode.indexOf(stringObject)===-1){
+                    resourceCode.push(stringObject);
+                }
 
                 tempCode = tempCode.replace(match[0],`${attrName}={R.string.${name}}`)
             }
