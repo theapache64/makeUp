@@ -34,7 +34,7 @@ export default class CodeMan {
                 const value = attrValue.replace(/'/g,"\\'");
 
                 //building resource code
-                const stringObject = `${name} : '${value}'`;
+                const stringObject = `${name}: '${value}',`;
                 if(resourceCode.indexOf(stringObject)===-1){
                     resourceCode.push(stringObject);
                 }
